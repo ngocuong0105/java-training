@@ -6,7 +6,7 @@ public class HashMapExample {
     public static void main(String[] arguments) {
         HashMap<String, String> strings = new HashMap<String, String>();
         strings.put("Evan", "email1@abv.edu");
-        strings.put("Eugene", "email2kur.edu");
+        strings.put("Eugene", "email2kur.com");
         strings.put("Adam", "email3@abe.edu");
         System.out.println(strings.size());
         strings.remove("Evan");
