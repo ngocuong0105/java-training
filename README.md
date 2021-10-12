@@ -13,7 +13,7 @@ The workspace contains two folders by default, where:
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
-## Standard coding style guidelines.
+## Standard coding style guidelines
 ### Naming
 - Variables: Nouns, lowercase first letter, capitals separating words, e.g x, shape, highScore, fileName
 - Methods: Verbs, lowercase first letter, e.g getSize(), draw(), drawWithColo()  
