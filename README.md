@@ -17,9 +17,7 @@ java yourFileName.java
 ```
 
 When Java was created in 1995, it was modeled after C++. There are some similarities in these languages and some differences. Of course, the syntax is different. However, the main difference lies in how the code is executed. Unlike Java, which is compiled into bytecode, which can then run on any device that has the JVM, C++ is compiled directly into machine code. This is why Java is famously known to be "Write once, run anywhere."
-When a program written in C++ is compiled, that compiled code can only run that environment. In order for the same program to run on another environment, the source code must be transferred to that environment and then compiled. This is one of the advantages that Java has over other languages (such as Python where you have many dependencies when using libraries). Also Java is better isolated from the OS. 
-
-## Difference between JDK, JRE, and JVM
+When a program written in C++ is compiled, that compiled code can only run that environment. In order for the same program to run on another environment, the source code must be transferred to that environment and then compiled. This is one of the advantages that Java has over other languages (such as Python where you have many dependencies when using library.
 
 ### The JVM and Machine Code
 
