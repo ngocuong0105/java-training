@@ -1,19 +1,4 @@
-// What is package in Java? package is a keyword in Java that is used to specify a directory structure 
-// for the particular class file, but at the same time, it is also used to control access. 
-// You can use a package to organize code in a meaningful directory for better navigation.
-
-
 package src;
-// The Java Development Kit (JDK) is one of three core technology packages 
-// used in Java programming, along with the JVM (Java Virtual Machine) and 
-// the JRE (Java Runtime Environment). It's important to differentiate 
-// between these three technologies, as well as understanding how they're connected:
-
-// The JVM is the Java platform component that executes programs.
-// The JRE is the on-disk part of Java that creates the JVM.
-// The JDK allows developers to create Java programs that can be 
-// executed and run by the JVM and JRE.
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

@@ -62,5 +62,9 @@ public class Baby {
         System.out.println(maya.numPoops);
         System.out.println(kuny.cry());
         System.out.println(Baby.numBabiesMade);
+        // Running from terminal
+        // got to src folder and compile java file j-> avac Baby.java
+        // run compiled file -> java Baby.java blah
+        System.out.println(args[0]);
     }
 }
