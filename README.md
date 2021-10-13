@@ -68,7 +68,11 @@ Packages are just directories and classes in other packages/folders need to be i
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
+<<<<<<< HEAD
 ## Standard Coding Style Guidelines.
+=======
+## Standard coding style guidelines
+>>>>>>> eeacd610c6c349378d8d5c7c10786265f884c115
 ### Naming
 - Variables: Nouns, lowercase first letter, capitals separating words, e.g x, shape, highScore, fileName
 - Methods: Verbs, lowercase first letter, e.g getSize(), draw(), drawWithColo()  
