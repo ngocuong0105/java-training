@@ -66,11 +66,54 @@ Packages are just directories and classes in other packages/folders need to be i
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
-<<<<<<< HEAD
+## Primitives and Classes
+A primitive is a data type which is not an object. int, float, double, long, short, boolean and char are examples of primitive data types. You can't invoke methods on these data types and they don't have a high memory footprint, which is their striking difference from classes.
+
+Everything else is a class (or class-like in the case of interfaces and enums). Pretty much everything that begins with an upper-case letter, like String, Integer are classes. Arrays also classify as not-primitives, even though they may hold them. int[] isn't a primitive type but it holds primitives.
+
+How java stores primitives?
+• Variables are like fixed size cups
+• Primitives are small enough that they just fit into the cup
+• Primitive types are basic java types. Examples of them are:
+– int, long, double, boolean, char, short, byte, float.
+The actual values are stored in the variable
+
+How java stores objects
+- Objects are too big to fit in a variable (too big for the cup) and are stored somewhere else  
+- Variable stores a number that locates the object
+- The object’s location is called a reference, from here it comes reference type = class type
+
+### Naming Classes
+The general convention for naming classes in Java is just that the first letter should always be capitalized and the whole name should be in camel case, meaning that the first letter of each word is capitalized.  
+NB:
+- Class names are Capitalized
+- 1 Class = 1 file
+- Having a main method means the class can be run
+- Class type = Reference type = Object type
+- Constructor name == the class name
+- No return type – never returns anything
+
+
+### Usage of static methods and fields.
+When something is not static (instance), it means that there is an instance of it for each instance of the class. Each one can change independently.
+When something is static, it means there is only one copy of it for all instances of the class, so changing it from any location affects all others.
+Static variables/methods typically use less memory because there is only one copy of them, regardless of how many instances of the class you have. Statics, when used appropriately, are perfectly fine in object oriented design.
+If you have a method/variable that you only need one instance of (e.g. a constant or a utility method), then just make it static. Understand though that making a method static means it cannot be overridden. So if you have a method you want to override in a subclass, then don't make it static.
+The general rule of thumb is - if you need only one copy of it, make it static. If you need a copy per instance, then make it non static.
+
+Java main() method is always static, so  that compiler can call it without the creation of an object or before the creation of an object of the class. 
+In any Java program, the main() method is the starting point from where compiler starts program execution. So, the compiler needs to call the main() method.
+
+### Public vs Private methods/fields
+- Private: like you'd think, only the class in which it is declared can see it.
+- Package Private: it can only be seen and used by the package in which it was declared. This is the default in Java (which some see as a mistake).
+- Protected: Package Private + can be seen by subclasses or package members.
+- Public: Everyone can see it.
+See access table in [here](https://stackoverflow.com/questions/215497/what-is-the-difference-between-public-protected-package-private-and-private-in).
+
+
 ## Standard Coding Style Guidelines.
-=======
-## Standard coding style guidelines
->>>>>>> eeacd610c6c349378d8d5c7c10786265f884c115
+
 ### Naming
 - Variables: Nouns, lowercase first letter, capitals separating words, e.g x, shape, highScore, fileName
 - Methods: Verbs, lowercase first letter, e.g getSize(), draw(), drawWithColo()  
@@ -78,17 +121,19 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 ### Good Class Design
 - Good classes: easy to understand and use  
-• Make fields and methods private by default  
-• Only make methods public if you need to  
-• If you need access to a field, create a method:  
+• Make fields and methods private by default!
+• Only make methods public if you need to
+• If you need access to a field, create a method:
+```
 public int getBar() { return bar; }
-
+```
 ### Assertions
 Verify that code does what you expect
 If true: nothing happens  
 If false: program crashes with error, e.g
+```
 assert result >= 0;
-
+```
 ### Java Interfaces
 Manipulate objects, without knowing how they work
 Useful when you have similar but not identical objects
@@ -97,7 +142,76 @@ Interfaces are set of classes that share methods
 Declare an interface with the common methods
 Can use the interface, without knowing an objectʼs specific type
 
-### Interface Notes
-Only have methods (mostly true)
-Do not provide code, only the definition (called signatures)
-A class can implement any number of interface
+### Use Interfaces
+Definition. An interface is a special form of an abstract class which does not implement any methods. In Java, you create an interface like this:
+```
+interface Interface
+{
+    void interfaceMethod();
+    default void anotherMethod() {
+        System.out.println("This is default method");
+    }
+}
+```
+Since the interface can't implement any methods, it's implied that the entire thing, including all the methods, are both public and abstract (abstract in Java terms means "not implemented by this class"). So the interface above is identical to the interface below:
+
+
+```
+public interface Interface
+{
+    abstract public void interfaceMethod();
+    default void anotherMethod() {
+        System.out.println("This is default method");
+    }
+}
+
+```
+
+
+
+To use this interface, you simply need to implement the interface. Many classes can implement an interface, and a class can implement many interfaces:
+
+```
+interface InterfaceA
+{
+     void interfaceMethodA();
+}
+
+interface InterfaceB
+{
+    void interfaceMethodB();
+}
+
+public class ImplementingClassA
+    implements InterfaceA, InterfaceB
+{
+    public void interfaceMethodA()
+    {
+        System.out.println("interfaceA, interfaceMethodA, implementation A");
+    }
+
+    public void interfaceMethodB()
+    {
+        System.out.println("interfaceB, interfaceMethodB, implementation A");
+    }
+}
+
+public class ImplementingClassB
+    implements InterfaceA, InterfaceB
+{
+    public void interfaceMethodA()
+    {
+         System.out.println("interfaceA, interfaceMethodA, implementation B");
+    }
+
+    public void interfaceMethodB()
+    {
+        System.out.println("interfaceB, interfaceMethodB, implementation B");
+    }
+}
+
+```
+Key points about interfaces:
+- They only have methods (mostly true)
+- They do not provide code, only the definition (called signatures)
+- A class can implement any number of interfaces
