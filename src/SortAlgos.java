@@ -3,6 +3,7 @@ package src;
 import java.util.Arrays;
 import java.util.Random;
 
+// Run algos from here
 public class SortAlgos {
     public static void main(String[] args) {
         InsertionSort insertionSort = new InsertionSort();
