@@ -1,5 +1,6 @@
 package src;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -13,19 +14,23 @@ public class SortAlgos {
 
         int[] nums = {1,2,-10,30,2,4,1,11,23,2,5,7}; 
         insertionSort.sort(nums);
-        System.out.println(Arrays.toString(nums));
+        System.out.println("Insertion Sort: " + Arrays.toString(nums));
 
         int[] nums1 = {1,2,-10,30,2,4,1,11,23,2,5,7}; 
         bubbleSort.sort(nums1);
-        System.out.println(Arrays.toString(nums1));
+        System.out.println("Bubble Sort: " + Arrays.toString(nums1));
 
         int[] nums2 = {1,2,-10,30,2,4,1,11,23,2,5,7}; 
         int[] arr = mergeSort.sorted(nums2);
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Merge Sort: " + Arrays.toString(arr));
 
         int[] nums3 = {1,2,-10,30,2,4,1,11,23,2,5,7}; 
         quickSort.sort(nums3);
-        System.out.println(Arrays.toString(nums3));
+        System.out.println("Quick Sort: " + Arrays.toString(nums3));
+
+        ArrayList<Integer> nums4 = new ArrayList<Integer>(Arrays.asList(1,2,-10,30,2,4,1,11,23,2,5,7)); 
+        nums4= quickSort.sorted(nums4);
+        System.out.println(nums4);
         
     }
 }
@@ -113,10 +118,40 @@ class MergeSort {
 class QuickSort {
     private int nums[];
     
+
     public void sort(int[] nums) {
         this.nums = nums;
         quickSort(0, nums.length-1);
     }
+    // ArrayList accepts only reference types as its element, not primitive datatypes. 
+    // When trying to do so it produces a compile time error.
+    public ArrayList<Integer> sorted(ArrayList<Integer> nums) {
+        if (nums.size() <=1) {
+            return nums;
+        }
+        int rnd = new Random().nextInt(nums.size());
+        int pivot = nums.get(rnd);
+        ArrayList<Integer> lower = new ArrayList<Integer>();
+        ArrayList<Integer> mid = new ArrayList<Integer>();
+        ArrayList<Integer> upper = new ArrayList<Integer>();
+        for (int i = 0; i<nums.size(); i++) {
+            if (nums.get(i)<pivot) {
+                lower.add(nums.get(i));
+            }
+            else if (nums.get(i)==pivot) {
+                mid.add(nums.get(i));
+            }
+            else if (nums.get(i)>pivot) {
+                upper.add(nums.get(i));
+            }
+        }
+        lower = sorted(lower);
+        upper = sorted(upper);
+        lower.addAll(mid);
+        lower.addAll(upper);
+        return lower;
+    }
+
     private int partition(int l, int r) {
         int rnd = new Random().nextInt(r-l);
         swap(rnd+l,r);
