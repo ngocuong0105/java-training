@@ -236,3 +236,76 @@ So as you can see, compiling is only a (small) part of the build (and the best p
 - Building is the sequence composed of compiling and linking, with possibly other tasks such as installer creation.
 
 Many compilers handle the linking step automatically after compiling source code.
+
+### Question and Answers
+
+## Does Java support default parameter values?
+
+Example:
+```
+void MyParameterizedFunction(String param1, int param2, bool param3=false);
+```
+
+Answer:
+No, but you can use overloading:
+
+```
+public MyParameterizedFunction(String param1, int param2)
+{
+    this(param1, param2, false);
+}
+
+public MyParameterizedFunction(String param1, int param2, boolean param3)
+{
+    //use all three parameters here
+}
+```
+
+“Method overloading is a feature of Java in which a class has more than one method of the same name and their parameters are different.”
+
+In other words, we can say that Method overloading is a concept of Java in which we can create multiple methods of the same name in the same class, and all methods work in different ways. When more than one method of the same name is created in a Class, this type of method is called Overloaded Method.
+
+Overloading usage examples:
+
+- It is possible that a programmer has to take only one name and the program itself decides which method to use for which type of value, then it will be easier for the programmer to get the same. 
+```
+public void Square ( int number ) 
+{
+ int square = number * number;
+ System.out.printIn(“Method with Integer Argument Called:“+square);
+ }
+public void Square(double number)
+ {
+ double square = number * number; 
+System.out.printIn(“Method with double Argument Called:“+square);
+}
+public void Square(long number)
+ { 
+long square = number * number;
+System.out.printIn(“Method with long Argument Called:“+square);
+}
+```
+This is better than defining functions intSquare(),doubleSquare(), longSquare.
+
+
+Another example is to define default values to keyworded arguments in a function.
+
+'''
+public MyParameterizedFunction(String param1, int param2)
+{
+    this(param1, param2, false);
+}
+
+public MyParameterizedFunction(String param1, int param2, boolean param3)
+{
+    //use all three parameters here
+}
+'''
+
+
+
+
+
+
+
+
