@@ -20,7 +20,7 @@ When Java was created in 1995, it was modeled after C++. There are some similari
 When a program written in C++ is compiled, that compiled code can only run that environment. In order for the same program to run on another environment, the source code must be transferred to that environment and then compiled. This is one of the advantages that Java has over other languages (such as Python where you have many dependencies when using library.
 
 
-#### Definition Human code -> byte code -> machine code
+#### Definition source code (human readable code) .java -> byte code .class -> machine code
 #### Definition  Compile-time is the instance where the code you entered is converted to executable while Run-time is the instance where the executable is running. Compile time -> Runtime.
 ## Compiler and Interpreter, C++ vs Java
 C++ uses compiler only. C++ is compiled and run using the compiler which converts source code into machine code so, C++ is **platform dependent**. Java uses compiler and interpreter both. Java source code is converted into bytecode at compilation time. The interpreter executes this bytecode at runtime and produces output. Java is interpreted that is why it is **platform independent**. 
@@ -44,6 +44,7 @@ The JDK is the Java Development Kit, the full-featured SDK for Java. It has ever
 The JVM is the Java platform component that executes programs.  
 The JRE is, as the name implies, an environment. It's basically a bunch of directories with   Java-related files and is the on-disk part of Java that creates the JVM.  
 The JDK allows developers to create Java programs that can be executed and run by the JVM and JRE.
+(JDK containes JVM and JRE, i.e. has everything).
 
 See more info about your java:
 ```
@@ -88,7 +89,12 @@ How java stores objects
 - Objects are too big to fit in a variable (too big for the cup) and are stored somewhere else  
 - Variable stores a number that locates the object
 - The object’s location is called a reference, from here it comes reference type = class type
-
+### Privitive vs Reference data types
+Primitive data types store data, reference data types store address.
+Primitives are less memory than reference data types.
+Reference data types = Classes aand can hold more values.
+Primitive hold only a single value.
+Primitive are faster than Reference data types.
 ### Naming Classes
 The general convention for naming classes in Java is just that the first letter should always be capitalized and the whole name should be in camel case, meaning that the first letter of each word is capitalized.  
 NB:
@@ -326,6 +332,10 @@ Constructors allow creation of instances of a given Class, whereas the main meth
 Furthermore you can have multiple constructors for a given class (accepting zero or more parameters), but only one main method (in a given class).
 
 The main difference though is my first point - they serve different purposes. One is an entry point to start a program, the other is explicitly there to allow for creation of instances of a class.
+
+## Java Full Course 
+
+This section contains notes on the youtube [tutorial](https://www.youtube.com/watch?v=xk4_1vDrzzo&ab_channel=BroCode).
 
 
 
