@@ -42,7 +42,9 @@ public class bro_tutorial {
 
         String fullname = "Ngo Cuong";
         System.out.println(fullname);
-        
+        // getting specific character of a string
+        System.out.println(fullname.charAt(0));
+
         // Swapping varaibles
         String water = "water";
         String beer = "beer";
@@ -196,3 +198,8 @@ public class bro_tutorial {
 
     }
 }
+
+        /*
+         * -------------- HashMaps --------------
+         */
+        // Hashmaps cannot hash primitive types
