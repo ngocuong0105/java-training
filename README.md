@@ -298,10 +298,7 @@ System.out.printIn(“Method with long Argument Called:“+square);
 }
 ```
 This is better than defining functions intSquare(),doubleSquare(), longSquare.
-
-
 Another example is to define default values to keyworded arguments in a function.
-
 '''
 public MyParameterizedFunction(String param1, int param2)
 {
@@ -317,13 +314,13 @@ public MyParameterizedFunction(String param1, int param2, boolean param3)
 
 ## Why have a constructor and main method in same class?
 
+See Baby.java for example.
+
 main() method is the entry point for any program in java. This is the method which is invoked by the JVM to execute the program.
 
 Every class including abstract classes has a constructor. Even if you don't declare one explicitly, compiler will add a default constructor. The main() method has to belong to some public class (which will always have a constructor). Yes generally it is preferable to design another class which has all the programming logic and just instantiate this class in the main class i.e. the one with main() method in it.
 
 But you can also have a class with main method which creates object of its own class (because you cannot access instance members from static methods).
-
-
 
 Constructors and the main method serve two different purposes.
 
@@ -333,10 +330,6 @@ Furthermore you can have multiple constructors for a given class (accepting zero
 
 The main difference though is my first point - they serve different purposes. One is an entry point to start a program, the other is explicitly there to allow for creation of instances of a class.
 
-## Java Full Course 
+## Java Full Course
 
 This section contains notes on the youtube [tutorial](https://www.youtube.com/watch?v=xk4_1vDrzzo&ab_channel=BroCode).
-
-
-
-

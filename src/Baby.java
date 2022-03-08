@@ -20,6 +20,8 @@ public class Baby {
     public String cry() {
         return "My name is " + this.name + " and I cry"; //this is same as python self
     }
+
+    // Main method serves as entry point
     public static void main(String[] args) {
         Baby kuny = new Baby("Kuny",true,2);
         Baby maya = new Baby("Maya",false,1);
