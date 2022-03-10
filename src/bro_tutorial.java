@@ -196,10 +196,25 @@ public class bro_tutorial {
         // fruitList.add("Strawberry");
         // System.out.println(fruitList);
 
-    }
-}
-
+        List<Integer> l = new Arrays.asList(3);
+        System.out.println(l);
+        l[0] = 1;
+        System.out.println(l);
         /*
          * -------------- HashMaps --------------
          */
         // Hashmaps cannot hash primitive types
+
+
+
+
+
+
+
+
+
+
+    }
+
+}
+  
