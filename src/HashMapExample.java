@@ -20,5 +20,7 @@ public class HashMapExample {
         for (Map.Entry<String, String> pairs : strings.entrySet()) {
         System.out.println(pairs);
         }
+        strings.put("Kuny", "ngo.cuong@abv.bg");
+        strings.containsKey("Maya");
     }
 }
