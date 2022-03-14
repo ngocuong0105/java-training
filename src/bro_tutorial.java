@@ -144,6 +144,29 @@ public class bro_tutorial {
             System.out.println("You are not allowed to drink alcohol!");
         }
 
+        /*
+         * -------------- String vs char --------------
+         */
+
+        String stringValueOf = String.valueOf('c'); //usefu when want to use char as key in HAshmap
+        // recall hashmaps in java do not accept primitive types
+
+        // access char in string with index
+        String string = "abcdef";
+        System.out.println(string.charAt(3));
+
+
+
+        /*
+         * -------------- .equals vs == Equality check --------------
+         */  
+        // Both equals() method and the == operator are used to compare two objects in Java.
+        //  == is an operator and equals() is method. 
+        // But == operator compares reference or memory location of objects in a heap, 
+        // whether they point to the same location or not.
+        // Whenever we create an object using the operator new,
+        //  it will create a new memory location for that object. 
+        // So we use the == operator to check memory location or address of two objects are the same or not.
 
         /*
          * -------------- Arrays --------------
@@ -204,14 +227,37 @@ public class bro_tutorial {
          * -------------- HashMaps --------------
          */
         // Hashmaps cannot hash primitive types
+        
+        HashMap<String, String> strings = new HashMap<String, String>();
+        strings.put("Evan", "email1@abv.edu");
+        strings.put("Eugene", "email2kur.com");
+        strings.put("Adam", "email3@abe.edu");
+        System.out.println(strings.size());
+        strings.remove("Evan");
+        System.out.println(strings.get("Eugene"));
+        for (String s : strings.keySet()) {
+        System.out.println(s);
+        }
+        for (String s : strings.values()) {
+        System.out.println(s);
+        }
+        for (Map.Entry<String, String> pairs : strings.entrySet()) {
+        System.out.println(pairs);
+        }
+        strings.put("Kuny", "ngo.cuong@abv.bg");
+        strings.containsKey("Maya");
 
+        /*
+         * -------------- Stack --------------
+         */
 
-
-
-
-
-
-
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i<10; i++) {
+            stack.push(i);
+        }
+        System.out.println(stack.peek());
+        stack.pop();
+        System.out.println(stack.peek());
 
 
     }
